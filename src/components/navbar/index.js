@@ -14,6 +14,7 @@ export default class Nav extends Component {
                             <li><Link to="/about">GIỚI THIỆU</Link></li>
                             <li><Link to="/course-list">DANH SÁCH KHOÁ HỌC</Link></li>
                             <li><Link to="/contact">LIÊN HỆ</Link></li>
+                            <li><Link to="/contact">LIÊN HỆ 2</Link></li>
                         </ul>
                     </div>
             </nav>        

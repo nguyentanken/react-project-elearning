@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import Nav from './components/navbar';
+import Footer from './components/footer';
+import Carousel from './components/carousel';
+
+import Routers from './Routers';
+
 
 function App() {
+  
+  let elmRoute = Routers.map((route, index) => {
+    return <Route key={index} path={route.path} exact={route.exact} component={ route.componentRoute } />
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container-fluid">
+        <Nav />
+        <Carousel />
+        <Switch>
+          { elmRoute }
+        </Switch>
+        <Footer />
+      </div>      
+    </Router>
   );
 }
 

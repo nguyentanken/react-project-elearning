@@ -4,7 +4,6 @@ import './App.css';
 import Nav from './components/navbar';
 import Footer from './components/footer';
 import Carousel from './components/carousel';
-
 import Routers from './Routers';
 
 

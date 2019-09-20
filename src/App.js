@@ -1,29 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
-import Nav from './components/navbar';
-import Footer from './components/footer';
-import Carousel from './components/carousel';
-import Routers from './Routers';
+import React from "react";
+import CourseList from "./Containers/CourseList/CourseList";
+import { connect } from "react-redux";
+// get courseList from api
+import api from "./Api";
+import { getCourse } from "./Actions";
 
+class App extends React.Component {
+  componentDidMount() {
+    api
+      .get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc?maKhoaHoc=GP05")
+      .then(res => {
+        this.props.getCourseList(res.data);
+      })
+      .catch(err => console.log(err));
+  }
 
-function App() {
-  
-  let elmRoute = Routers.map((route, index) => {
-    return <Route key={index} path={route.path} exact={route.exact} component={ route.componentRoute } />
-  })
-  return (
-    <Router>
-      <div className="container-fluid">
-        <Nav />
-        <Carousel />
-        <Switch>
-          { elmRoute }
-        </Switch>
-        <Footer />
-      </div>      
-    </Router>
-  );
+  render() {
+    return (
+     <React.Fragment>
+       <CourseList />
+     </React.Fragment>
+    );
+  }
 }
-
-export default App;
+const mapDispatchToDrops = dispatch => {
+  return {
+    getCourseList: courselist => {
+      dispatch(getCourse(courselist));
+    }
+  };
+};
+export default connect(
+  null,
+  mapDispatchToDrops
+)(App);

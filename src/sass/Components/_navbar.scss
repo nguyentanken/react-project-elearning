@@ -1,0 +1,40 @@
+.myNavbar {
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    &__toolbar{
+        justify-content: space-between;
+    }
+    &__logo {
+        max-width: 160px;
+    }
+    &__login__logout{
+        justify-content: flex-end;
+        Button {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        a, a:hover, a:active{
+            color: white;
+            text-decoration: none;
+        }
+       
+      
+    }
+    &__menu {
+        display: flex;
+        a:visited {
+            color: white;
+            
+        }
+        a, a:hover, a:active{
+            text-decoration: none;
+        }
+       
+        p {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+    }
+}

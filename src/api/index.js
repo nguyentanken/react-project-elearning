@@ -3,4 +3,4 @@ const api = axios.create({
   baseURL: 'http://elearning0706.cybersoft.edu.vn/api',
 });
 
-export default api
+export default api;

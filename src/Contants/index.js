@@ -1,1 +1,6 @@
 export const GET_COURSE = 'GET_COURSE';
+export const GET_COURSE_DETAIL = 'GET_COURSE_DETAIL';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const SIGN_OUT = 'SIGN_OUT';
+export const LIST_TITLE_COURSE = 'LIST_TITLE_COURSE';
+export const GET_COURSE_OF_TITLE = 'GET_COURSE_OF_TITLE';

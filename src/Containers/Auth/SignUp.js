@@ -35,6 +35,7 @@ const styles = theme => ({
   form: {
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
+      fontSize: "1.5rem"
   },
   submit: {
       margin: theme.spacing(3, 0, 2),
@@ -50,12 +51,12 @@ const styles = theme => ({
       soDT: "",
       maNhom: "GP05",
       email: "",
-      maLoaiNguoiDung : "HV"
+      maLoaiNguoiDung : "HV",
+     
     }
   }
   onChange = (e) => {
     this.setState({
-      
      [e.target.name] : e.target.value
     })
   }

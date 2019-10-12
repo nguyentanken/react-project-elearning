@@ -3,8 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 // import Box from '@material-ui/core/Box';
@@ -13,7 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 // import action
-import {signIn} from '../../Actions/user';
+import {signIn, setCurrentUser} from '../../Actions/user';
+import {connect} from 'react-redux';
 
 
 const styles = theme => ({
@@ -35,7 +34,7 @@ const styles = theme => ({
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
-    fontSize: '1rem'
+    fontSize: '1.5rem'
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -48,23 +47,30 @@ const styles = theme => ({
     super(props);
     this.state={
       taiKhoan: "",
-      matKhau: ""
+      matKhau: "",
+      isLogin: false
     }
   }
   onChange= (e) => {
     this.setState({
+      isLogin: true,
       [e.target.name]: e.target.value
     })
     }
     onClick = (e) => {
-      signIn(this.state, () => {
+      this.setState({
+        isLogin: true
+      })
+      e.preventDefault();
+      signIn(this.state, (currentuser) => {
+        this.props.setCurrentUser(currentuser);
         this.props.history.push("/");
       })
     }
   
   render() {
   const {classes} = this.props;
-    console.log(this.props);
+   // console.log(this.props);
     
   return (
     <Container component="main" maxWidth="xs">
@@ -133,4 +139,12 @@ const styles = theme => ({
   );
 }
 }
-export default withStyles(styles)(SignIn);
+
+const mapDispathToDrops =(dispath) => {
+  return {
+    setCurrentUser : (currentUser) => {
+      dispath(setCurrentUser(currentUser))
+    }
+  }
+}
+export default connect(null,mapDispathToDrops)(withStyles(styles)(SignIn));

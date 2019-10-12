@@ -14,13 +14,19 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import SignIn from './Containers/Auth/SignIn';
 import SignUp from './Containers/Auth/SignUp';
+import profileUser from './Containers/Auth/profileUser';
+import CourseDetail from './Containers/CourseDetail/CourseDetail';
+
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-       <Navbar />
+        <Navbar />
+        {/* <Carousel /> */}
         <Route path="/sign-up" exact component={SignUp} />
         <Route path="/sign-in" exact component={SignIn} />
+        <Route path="/profile-user/:taikhoan" exact component={profileUser}/>
+        <Route path='/course-detail/:makhoahoc' exact component={CourseDetail} />
         <Route path="/" exact component={App} />
         <Footer />
     </Router>

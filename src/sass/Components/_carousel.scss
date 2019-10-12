@@ -1,0 +1,13 @@
+@import '../Base/reset';
+
+.carousel {
+    background-image: url('../../images/bg_banner_02-3.jpg');
+    background-repeat : no-repeat ;
+    background-size: cover;
+    background-position:top;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+  
+}
+

@@ -1,0 +1,106 @@
+@import "../Base/reset";
+
+.mycontainer {
+  width: 100%;
+  height: 80vh;
+  background: url(../../images/bg_coundow_course-5.jpg) center center
+    no-repeat;
+  background-size: cover;
+    opacity: 0.8;
+  .breadcrumb__carousel .MuiBreadcrumbs-root {
+    font-size: 3rem;
+    position: relative;
+    font-style: italic;
+    color: #13363d;
+    left: 32%;
+    padding-top: 60px;
+    .MuiBreadcrumbs-li a {
+      color: #13363d;
+      text-decoration: none;
+    }
+    .MuiBreadcrumbs-li p {
+      font-size: 3rem;
+
+      font-style: italic;
+      color: #13363d;
+    }
+  }
+  &__tenkhoahoc {
+    font-size: 5rem;
+    color: #13363d;
+    h1 {
+      padding: 0 33%;
+      width: 100%;
+      height: auto;
+    }
+    h3 {
+      padding: 0 33%;
+      width: 100%;
+      height: auto;
+      line-height: 50px;
+      margin: 0;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    .info__giangvien {
+      display: flex;
+      margin: 0 30px;
+      .MuiAvatar-root {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+      }
+      &-tieude {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #13363d;
+      }
+      &-hoten {
+        font-size: 2rem;
+        line-height: 0;
+        color: #13363d;
+      }
+      
+    }
+    .info__sohocvien {
+      margin: 0 30px;
+      height: 60px;
+      .hocvien {
+        font-size: 1.5rem;
+        /* line-height: 0; */
+        margin: 0;
+        font-weight: 500;
+        color: #13363d;
+      }
+      .sohocvien {
+        font-size: 2rem;
+        /* margin: 0; */
+        color: #13363d;
+        line-height: 0;
+        margin-top: 4px;
+      }
+    }
+    .info__luotxem {
+      height: 60px;
+      margin: 0 30px;
+      .luotxem {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 500;
+        color: #13363d;
+      }
+      .soluotxem {
+        font-size: 2rem;
+        color: #13363d;
+        line-height: 0;
+        margin-top: 4px;
+      }
+    }
+  }
+}

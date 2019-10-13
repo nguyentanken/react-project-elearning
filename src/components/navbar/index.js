@@ -29,7 +29,7 @@ function Navbar(props) {
     setAnchorEl(null);
   }
   const handleCourseList =() => {
-    props.courseListTitle("GP05");
+    //props.courseListTitle("GP05");
   }
   const onClick = () => {
     props.signOut(!props.currentUser.isLogin, () => {
